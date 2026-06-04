@@ -1,0 +1,11 @@
+import example.Author
+
+model {
+    Iterable<Author> authorList
+    Long authorCount
+}
+
+json {
+    total authorCount ?: authorList?.size()
+    authors g.render(template: '/author/author', collection: authorList ?: [], var: 'author')
+}

@@ -1,0 +1,11 @@
+import example.Book
+
+model {
+    Iterable<Book> bookList
+    Long bookCount
+}
+
+json {
+    total bookCount ?: bookList?.size()
+    books g.render(template: '/book/book', collection: bookList ?: [], var: 'book')
+}
