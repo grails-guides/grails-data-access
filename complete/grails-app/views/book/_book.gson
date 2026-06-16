@@ -1,0 +1,14 @@
+import example.Book
+
+model {
+    Book book
+}
+
+json {
+    id book.id
+    title book.title
+    isbn book.isbn
+    publishedOn book.publishedOn?.toString()
+    authorId book.author?.id
+    tagIds book.tags*.id
+}

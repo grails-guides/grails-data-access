@@ -1,0 +1,11 @@
+import example.Author
+
+model {
+    Author author
+}
+
+json {
+    id author.id
+    name author.name
+    email author.email
+}
